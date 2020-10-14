@@ -1,0 +1,158 @@
+<div class="formmargin" id="container">
+    <div class="header">
+        <p style="font-weight: bold;font-size: 18px;" class="border">Document Creation </p>
+
+    </div>
+    <div fxLayout="row" style="margin-top: 0.5rem;" fxLayout.lt-md="row wrap">
+
+
+        <div fxLayout="column" fxFlex="10">
+            <div class="text_sign">Sign Type</div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="mainselect">
+                <mat-select [(value)]="selected"
+                    style="font-size: small;padding-left: 12px;padding-right: 5px;font-weight: 600;">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">PO</mat-option>
+                    <mat-option value="option2">Token</mat-option>
+                </mat-select>
+            </div>
+
+        </div>
+        <div fxLayout="column" fxFlex="15" style="position: relative;">
+            <div class="text_Due">Due Date</div>
+            <div fxLayout="row" fxLayoutAlign="start center" class="searchbar">
+                <input matInput [matDatepicker]="picker"
+                    style="border: none;outline: none;width: 100%;font-weight: 600;padding-left: 10px;">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </div>
+        </div>
+        <div fxFlex="8"></div>
+        <div fxLayout="column" fxFlex="10">
+            <div class="text_Ref">Reference</div>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="mainselect1">
+                <mat-select [(value)]="selected1"
+                    style="font-size: small;padding-left: 12px;padding-right: 5px;font-weight: 600;">
+                    <mat-option>None</mat-option>
+                    <mat-option value="option1">Token</mat-option>
+                    <mat-option value="option2">PO</mat-option>
+                </mat-select>
+            </div>
+        </div>
+        <div fxLayout="column" fxFlex="15">
+            <div class="text_Refno">Reference No</div>
+            <div fxLayout="row" fxLayoutAlign="start center" class="searchbar1">
+                <input class="inputfield" style="font-weight: bold;">
+            </div>
+        </div>
+
+
+        <div fxFlex fxLayout="row" fxFlex fxLayoutAlign="end center">
+            <div fxFlex="10"></div>
+            <div fxLayout="column" fxLayoutAlign="start center">
+                <p class="text_all"> All Users </p>
+                <div class="border_all">
+                </div>
+            </div>
+            <button mat-stroked-button
+                style="width: 130px;height: 40px;border-color: #64a8e3;background-color: #edf7ff;margin-right: 10px;"
+                fxLayout="row">
+                <img src="../../assets/image/vsign/document (1).png " class="folder">
+                <p style="position: absolute;left: 45px;font-size: 10px;opacity: 80%;top: -5px;">Copy from</p>
+                <p style="position: absolute;bottom: 3px;left: 45px;top: 8px;color: #414141;font-size: 13px;">Template
+                </p>
+            </button>
+
+
+            <button mat-stroked-button
+                style="width: 130px;height:40px;border-color: #faaa55;background-color: #fffdf4;">
+                <div class="fabbox" style="margin-top: 11px;">
+                    <img src="../../assets/image/vsign/add.png" style="width:6px;">
+                </div>
+                <p style="position: relative;bottom: 24px;left: 10px;"> Add User</p>
+            </button>
+
+        </div>
+
+    </div>
+    <div fxLayout="row" fxLayout.lt-md="row wrap">
+        <div fxFlex.gt-sm="58" fxFlex.gt-xs="100" fxFlex.lt-sm="100">
+            <div class="text_rem">Remarks</div>
+            <div fxLayout="row" fxLayoutAlign="start center" class="remarks">
+                <textarea class="inputfield1"></textarea>
+
+            </div>
+        </div>
+        <div fxFlex="7"></div>
+        <div fxLayout="column" fxFlex>
+
+            <div cdkDropList #doneList="cdkDropList" [cdkDropListData]="done" class="example-list"
+                (cdkDropListDropped)="drop($event)">
+                <div class="example-box" *ngFor="let item of done; index as i" cdkDrag fxLayout="row">
+
+                    <section style="position: relative;">
+                        <!-- <mat-checkbox > -->
+                        <img src="../../assets/image/vsign/user-2.png" class="img_all">
+
+                        <div class="txt_prdtname">{{item.name}}</div>
+
+                        <div style="margin-left: 60px;">{{item.id}}</div>
+
+                        <!-- <div class="borderline"></div> -->
+
+
+
+                        <!-- </mat-checkbox> -->
+                    </section>
+                    <div fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="25px">
+                        <!-- <button mat-flat-button color="primary">Remove</button> -->
+                        <img src="../../assets/image/vsign/sign-delete-icon.png" style="width: 30px;height: 30px;cursor: pointer;"  (click)="removeItem(i)">
+                        <div style=" cursor: move;" cdkDragHandle>
+                            <div class="smline1"></div>
+                            <div class="smline2"></div>
+                            <div class="smline3"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div fxLayout="column" fxLayoutAlign="center center" style="border: none;" class="drop">
+        <div class="drop-container" ngFileDrop [options]="options" (uploadOutput)="onUploadOutput($event)"
+            [uploadInput]="uploadInput" [ngClass]="{ 'is-drop-over': dragOver }">
+            <h1 class="dropfiles">Drop files here to add</h1>
+        </div>
+        <p
+            style="align-items: center;color: #061b3d;font-weight: bold;margin-top: 15px;font-size: large;letter-spacing: 0.9px;">
+            OR</p>
+        <button mat-stroked-button class="btn_browse">
+
+            <label for="test">
+                <!-- <p>Browse file</p> -->
+                <input type="file" id="test" ngFileSelect [options]="options" (uploadOutput)="onUploadOutput($event)"
+                    [uploadInput]="uploadInput" multiple class="upload" />
+            </label>
+            <!-- <img src="../../assets/image/vsign/folder (1).png" class="folder"> -->
+
+
+        </button>
+        <!-- <button type="button" class="start-upload-btn" >
+            Start Upload
+        </button> -->
+
+
+        <!-- </button> -->
+        <!-- <label class="upload-button">
+            <input type="file" ngFileSelect [options]="options" [uploadInput]="uploadInput" multiple>
+            Browse file
+        </label> -->
+    </div>
+
+    <button mat-raised-button class="button" style="border:none;box-shadow:none" (click)="startUpload()">Submit</button>
+</div>
+
+<pre>{{files1 | json}}</pre>
