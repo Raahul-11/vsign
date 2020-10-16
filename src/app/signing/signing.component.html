@@ -155,40 +155,47 @@
             <div fxFlex="1"></div>
             <p class="line5"></p>
             <div fxFlex="1"></div>
-            <!-- <div> -->
-            <img src="../../assets/image/vsign/letter.png" class="letterimage" fxFlex="68" fxFlex.md="57" fxFlex.sm="47"
-                fxLayoout="row" style="flex-wrap: wrap;">
-            <!-- <ngx-doc-viewer [url]="doc" [viewer]="viewer" style="width:100%;height:80vh;"></ngx-doc-viewer> -->
-            <!-- </div> -->
-            <!-- <p>
-                <img src="{{imageSrc}}" style="width: 50%;height: 50%;">
-            </p> -->
-            <div fxFlex="1"></div>
+            <div fxLayout="column">
+                <img src="../../assets/image/vsign/letter.png" class="letterimage " fxFlex.md="57" fxFlex.sm="47">
+                <!-- <img src="{{imageSrc}}" class="letterimage"> -->
+                <div fxLayout="row"  class="footer">
+                    <div class="round_print">
+                        <img src="../../assets/image/vsign/print (1).svg" class="imgprint">
+                    </div>
+                    <button class="btn_print">Print</button>
+
+                    <div class="txt-letter">Increament Letter-John-Preview(1/2)</div>
+                    <p class="txt_120">120%</p>
+                    <div style="margin-top: 13px;">-</div>
+                    <hr class="horizontal_line">
+                    <hr class="vertical_line">
+                    <div class="plus">+</div>
+
+                    <img src="../../assets/image/vsign/expand.svg" style="margin-right: 7px;">
+                </div>
+            </div>
+            <!-- <app-image-viewer [images]="['https://images.nga.gov/en/web_images/niagara2.jpg']"
+                [idContainer]="'idOnHTML'" [loadOnInit]="true"></app-image-viewer> -->
+
+            <!-- <div fxFlex="1"></div> -->
 
             <div fxlayout="column" fxFlex>
                 <div class="box2" fxLayout="row" fxLayoutAlign="start center">
                     <img src="../../assets/image/vsign/pen-alt.svg" class="doc1">
                     <p class="doc">Sign Document</p>
                 </div>
-                <div
-                    style="border: 1px solid #c4c4c4;height: 584px;position: relative;left: 10px;width: 165px;bottom: 20px;">
+                <div style="border: 1px solid #c4c4c4;height: 584px;position: relative;width: 165px;bottom: 20px;">
 
-                    <!-- <div class="box3">
-                    <img src="../../assets/image/vsign/letter1.jpg" style="width: 120px;height: 150px;">
-                    
-                </div>
-                <div class="box4">
-                    <img src="../../assets/image/vsign/letter2.png" style="width: 120px;height: 150px;">
-                </div>
-                <div class="box5">
-                    <img src="../../assets/image/vsign/letter3.png" style="width: 120px;height: 150px;">
-                </div> -->
+
 
                     <button *ngFor="let imageButton of imageButtons; let  i= index" (click)="onClick(imageButton)"
                         class="button" style="margin-left: 14px;margin-top: 10px;">
                         <img [src]='imageButton.src' style="width: 120px;height: 170px;">
+                        <!-- <p>{{i+i}}</p> -->
                     </button>
+
                 </div>
+
             </div>
 
         </div>

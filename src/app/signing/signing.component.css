@@ -155,8 +155,8 @@
 }
 
 .letterimage {
-    width: 58%;
-    /* height: 30%; */
+    width: 97%;
+    height: 80%;
     /* margin-left: 15px; */
     /* margin-bottom: -16px; */
     margin-top: -36px;
@@ -172,7 +172,7 @@
     border-bottom: 8px solid #ef8377;
     border-color: #ef8377;
     position: relative;
-    left: 10px;
+    /* left: 10px; */
     bottom: 40px;
 }
 
@@ -242,7 +242,7 @@
     content: '';
     width: 9px;
     height: 9px;
-    border: 3px solid #dddddd;
+    border: 3px solid black;
     display: block;
     text-align: center;
     margin: 3px auto 10px auto;
@@ -295,6 +295,7 @@
 .txt_20july {
     position: absolute;
     margin-left: 23%;
+    margin-top: 10px;
     top: 47px;
     font-size: 10px;
     opacity: 60%;
@@ -307,7 +308,7 @@
     left: 25%;
     opacity: 0.6;
     margin-left: 0.2rem;
-    top: 60px;
+    top: 74px;
 }
 
 .img_msg1 {
@@ -319,7 +320,7 @@
     height: 14.3px;
     object-fit: contain;
     opacity: 0.6;
-    top: 60px;
+    top: 74px;
 }
 
 .img_msg2 {
@@ -330,13 +331,13 @@
     height: 14.3px;
     object-fit: contain;
     opacity: 0.6;
-    top: 60px;
+    top: 74px;
 }
 
 .txt_last {
     position: absolute;
     margin-left: 20.5%;
-    top: 60px;
+    top: 74px;
     font-size: 8px;
     opacity: 0.6;
     /* margin-right: 1%; */
@@ -345,7 +346,7 @@
 .txt_last1 {
     position: absolute;
     margin-left: 34%;
-    top: 60px;
+    top: 74px;
     opacity: 0.6;
     font-size: 8px;
 }
@@ -353,7 +354,7 @@
 .txt_last2 {
     position: absolute;
     left: 49.5%;
-    top: 60px;
+    top: 74px;
     opacity: 0.6;
     font-size: 8px;
 }
@@ -364,7 +365,7 @@
     opacity: 0.6;
     position: absolute;
     left: 39%;
-    top: 60px;
+    top: 74px;
 }
 
 .txt_Karthi {
@@ -376,6 +377,7 @@
 .txt_21july {
     position: absolute;
     margin-left: 36%;
+    margin-top: 10px;
     top: 48px;
     font-size: 10px;
     opacity: 60%;
@@ -383,8 +385,8 @@
 
 .txt_22july {
     position: absolute;
-    ;
     margin-left: 49.5%;
+    margin-top: 10px;
     top: 46px;
     font-weight: 700;
     color: #232044;
@@ -440,4 +442,100 @@
     margin-top: 109px;
     position: relative;
     left: -24px;
+}
+
+.txt-letter {
+    align-self: center;
+    align-content: center;
+    flex-grow: 1;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.45;
+    letter-spacing: 0.2px;
+    text-align: center;
+    color: #343434;
+}
+
+.btn_print {
+    color: skyblue;
+    font-size: 15px;
+    border: 1px solid skyblue;
+    height: 20px;
+    border-left: none;
+    background-color: white;
+    margin-left: -3px;
+    margin-top: 14px;
+    outline: none;
+}
+
+.horizontal_line {
+    border-top: 1px solid black;
+    width: 36%;
+    height: 0px;
+    margin-right: 62px;
+    margin-top: 24px;
+    margin-left: 5px;
+    background-color: #8e8e8e;
+}
+
+.vertical_line {
+    border: 1px solid black;
+    position: relative;
+    left: -220px;
+    border-width: 0.1;
+    background-color: black;
+}
+
+.plus {
+    float: left;
+    position: relative;
+    left: -54px;
+    top: 13px;
+}
+
+.imgprint {
+    width: 20px;
+    height: 20px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.round_print {
+    border-radius: 50%;
+    background-color: white;
+    border: 1px solid skyblue;
+    margin-top: 8px;
+    width: 30px;
+    height: 30px;
+    margin-left: 5px;
+}
+
+.footer {
+    border-bottom: 1px solid #c4c4c4;
+    height: 50px;
+    position: relative;
+    width: 98.7%;
+    bottom: 20px;
+    background-color: rgb(248 245 245);
+}
+
+.txt_120 {
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2.07;
+    letter-spacing: 0.42px;
+    text-align: center;
+    color: #000000;
+    margin-top: 9px;
+    margin-right: 3px;
+}
+
+.button:hover {
+    border: 1px solid #f3a299;
+    border-bottom: 5px solid #f3a299;
 }
